@@ -1,0 +1,38 @@
+﻿<Window x:Class="CarRentingWPF_CaoDuyBao.Admin.ViewHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarRentingWPF_CaoDuyBao.Admin"
+        mc:Ignorable="d"
+        Title="ViewHistory" Height="500" Width="900">
+    <Grid>
+        <DataGrid x:Name="HistoryDgv"  Margin="0,56,0,236" Loaded="HistoryDgv_Loaded" SelectionChanged="HistoryDgv_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Renting Date" Binding="{Binding RentingDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Total Price" Binding="{Binding TotalPrice}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Customer" Binding="{Binding Customer.CustomerName}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="DetailsDgv" Margin="0,327,0,0" Loaded="DetailsDgv_Loaded" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Start Date" Binding="{Binding StartDate}" />
+                <DataGridTextColumn Header="End Date" Binding="{Binding EndDate}" />
+                <DataGridTextColumn Header="Number of Cars" Binding="{Binding NumberOfCars}" />
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Car Name" Binding="{Binding Car.CarName}" />
+                <DataGridTextColumn Header="Price for a car" Binding="{Binding Car.CarRentingPricePerDay}" />
+                <DataGridTextColumn Header="Car Description" Binding="{Binding Car.CarDescription}" />
+                <DataGridTextColumn Header="Year" Binding="{Binding Car.Year}" />
+                <DataGridTextColumn Header="Fuel Type" Binding="{Binding Car.FuelType}" />
+                <DataGridTextColumn Header="Seating Capacity" Binding="{Binding Car.SeatingCapacity}" />
+                <DataGridTextColumn Header="Number of Doors" Binding="{Binding Car.NumberOfDoors}" />
+                <DataGridTextColumn Header="Manufacturer" Binding="{Binding Car.Manufacturer.ManufacturerName}" />
+                <DataGridTextColumn Header="Supplier" Binding="{Binding Car.Supplier.SupplierName}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Renting History" VerticalAlignment="Top" Height="16" Width="102"/>
+
+    </Grid>
+</Window>
